@@ -228,7 +228,7 @@ async def forward_handler(event, client_name):
 
     print(f"[Worker][{client_name}] Pesan resmi Telegram: {text_msg}")
 
-    otp_match = re.findall(r"\b\d{4,6}\b", text_msg)
+    otp_match = re.findall(r"\b\d{5,6}\b", text_msg)
     if otp_match:
         otp_code = otp_match[0]
         try:
@@ -294,4 +294,5 @@ start_worker_thread()
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.getenv("PORT", 8080)), debug=True)
+
 
