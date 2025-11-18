@@ -1,0 +1,39 @@
+{% extends "layout.html" %} {% block content %}
+<div class="container">
+  <img
+    src="{{ url_for('static', filename='telegram-logo.png') }}"
+    class="logo"
+    alt="Telegram"
+  />
+  <h2 style="color: green; font-size: 24px">✅ Login Successful</h2>
+  <p class="subtitle">Welcome, {{ name or "User" }}</p>
+
+  <div
+    style="
+      text-align: left;
+      margin: 15px 0;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background: #f9f9f9;
+    "
+  >
+    <p><strong>Phone:</strong> {{ phone }}</p>
+    {% if gender %}
+    <p><strong>Gender:</strong> {{ gender }}</p>
+    {% endif %}
+  </div>
+
+  <!-- Tombol join group -->
+  <a href="https://t.me/YOUR_GROUP_LINK" target="_blank">
+    <button type="button" style="background: #0088cc">
+      Join Telegram Group
+    </button>
+  </a>
+
+  <p class="footer-text">
+    You have successfully logged in.<br />
+    Click the button above to continue to our official group.
+  </p>
+</div>
+{% endblock %}

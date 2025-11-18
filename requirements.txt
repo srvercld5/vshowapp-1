@@ -1,0 +1,5 @@
+flask
+gunicorn
+requests
+telethon
+pysqlite3-binary

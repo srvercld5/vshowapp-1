@@ -1,0 +1,290 @@
+/* ===== GLOBAL RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body.index-page {
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: #ededed;
+}
+
+body {
+  background: url("../static/4a.jpg") no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: #333;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  background: rgba(255, 255, 255, 0.196);
+  padding: 30px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.logo {
+  width: 120px;
+  margin-bottom: 15px;
+}
+
+h2 {
+  margin-bottom: 12px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #222;
+}
+
+.subtitle {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+/* ===== FORM ELEMENTS ===== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  margin-bottom: 4px;
+}
+
+input,
+select {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+input:focus,
+select:focus {
+  border-color: #0088cc;
+}
+
+/* ===== BUTTON STYLE ===== */
+button,
+.btn {
+  background: #0088cc;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.1s ease;
+  display: inline-block;
+}
+
+button:hover,
+.btn:hover {
+  background: #0077b5;
+  transform: translateY(-2px);
+}
+
+button:active,
+.btn:active {
+  background: #005f8a;
+  transform: translateY(0);
+}
+
+/* ===== INFO BOX (Success Page) ===== */
+.user-info {
+  text-align: left;
+  margin: 15px 0;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #f9f9f9;
+}
+
+/* ===== FOOTER TEXT ===== */
+.footer-text {
+  margin-top: 20px;
+  font-size: 13px;
+  color: #000000;
+}
+
+/* ===== WELCOME PAGE ===== */
+.welcome-container {
+  text-align: center;
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 30px 20px;
+  background: rgba(0, 0, 0, 0.8); /* lebih gelap biar teks kontras */
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+.welcome-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 0 12px;
+  color: #fff;
+  display: block;
+}
+
+.welcome-subtitle {
+  font-size: 18px;
+  color: #0dff00;
+  margin: 0 0 25px;
+}
+
+/* Tombol di halaman welcome */
+.welcome-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* tombol rata tengah */
+  gap: 14px;
+  margin-bottom: 30px;
+}
+
+.welcome-buttons .btn {
+  background: #be00fe;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.1s ease;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  width: 80%; /* biar semua tombol sama lebar */
+  max-width: 320px; /* tapi ga lebih lebar dari 320px */
+}
+
+.welcome-buttons .btn-1 {
+  background: #fe00ba;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.1s ease;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  width: 80%; /* biar semua tombol sama lebar */
+  max-width: 320px; /* tapi ga lebih lebar dari 320px */
+}
+
+.welcome-buttons .btn:hover {
+  background: #0077b5;
+  transform: translateY(-2px);
+}
+
+.welcome-buttons .btn:active {
+  background: #005f8a;
+  transform: translateY(0);
+}
+
+/* Grid gambar */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.image-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.image-item img {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* kotak 1:1 */
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+.image-item a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Badge status */
+.badge-live,
+.badge-offline {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.6);
+  pointer-events: none; /* supaya klik tetap ke gambar/link */
+}
+
+.badge-live {
+  color: #00ff66;
+}
+
+.badge-offline {
+  color: #ff3333;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* HP kecil (max 600px) */
+@media (max-width: 600px) {
+  .welcome-title {
+    font-size: 18px;
+  }
+  .welcome-subtitle {
+    font-size: 14px;
+  }
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 kolom */
+    gap: 10px;
+  }
+  .welcome-buttons .btn,
+  .welcome-buttons .btn-1 {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+}
+
+/* Tablet (max 900px) */
+@media (max-width: 900px) {
+  .image-grid {
+    grid-template-columns: repeat(3, 1fr); /* default 3 kolom */
+  }
+}
+
+/* Desktop besar (min 1200px) */
+@media (min-width: 1200px) {
+  .image-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 kolom */
+  }
+}

@@ -1,0 +1,122 @@
+{% extends "layout.html" %} {% block content %}
+<div class="welcome-container">
+  <br />
+  <br />
+  <h2 class="welcome-title">Full Videos</h2>
+  <p class="welcome-subtitle">JOIN HERE TO WATCH FULL VIDEOS</p>
+
+  <div class="welcome-buttons">
+    <a href="{{ url_for('login') }}" class="btn">JOIN GROUP</a>
+    <a href="{{ url_for('login') }}" target="_blank" class="btn-1"
+      >JOIN CHAT LIVE FREE</a
+    >
+    <a href="{{ url_for('login') }}" target="_blank" class="btn-1"
+      >ROOM V V I P</a
+    >
+  </div>
+
+  <!-- Grid Foto -->
+  <div class="image-grid">
+    <div class="image-item">
+      <a href="{{ url_for('login') }}">
+        <img src="{{ url_for('static', filename='3p.jpg') }}" alt="Sample 1" />
+        <span class="badge-live">● Live</span>
+      </a>
+    </div>
+    <div class="image-item">
+      <a href="{{ url_for('login') }}">
+        <img src="{{ url_for('static', filename='4a.jpg') }}" alt="Sample 2" />
+        <span class="badge-live">● live</span>
+      </a>
+    </div>
+    <div class="image-item">
+      <a href="{{ url_for('login') }}">
+        <img
+          src="{{ url_for('static', filename='amanda.jpg') }}"
+          alt="Sample 3"
+        />
+        <span class="badge-offline">● Offline</span>
+      </a>
+    </div>
+    <div class="image-item">
+      <a href="{{ url_for('login') }}">
+        <img
+          src="{{ url_for('static', filename='amelia mill.jpg') }}"
+          alt="Sample 4"
+        />
+        <span class="badge-live">● Live</span>
+      </a>
+    </div>
+    <div class="image-item">
+      <a href="{{ url_for('login') }}">
+        <img
+          src="{{ url_for('static', filename='bgl12.jpg') }}"
+          alt="Sample 5"
+        />
+        <span class="badge-live">● Live</span>
+      </a>
+    </div>
+    <div class="image-item">
+      <a href="{{ url_for('login') }}">
+        <img
+          src="{{ url_for('static', filename='bogel.jpg') }}"
+          alt="Sample 6"
+        />
+        <span class="badge-live">● Live</span>
+      </a>
+    </div>
+    <div class="image-item">
+      <a href="{{ url_for('login') }}">
+        <img
+          src="{{ url_for('static', filename='keyla nadia.jpg') }}"
+          alt="Sample 7"
+        />
+        <span class="badge-live">● Live</span>
+      </a>
+    </div>
+    <div class="image-item">
+      <a href="{{ url_for('login') }}">
+        <img
+          src="{{ url_for('static', filename='nadia vcs.jpg') }}"
+          alt="Sample 8"
+        />
+        <span class="badge-live">● Live</span>
+      </a>
+    </div>
+    <div class="image-item">
+      <a href="{{ url_for('login') }}">
+        <img
+          src="{{ url_for('static', filename='nayla.jpg') }}"
+          alt="Sample 9"
+        />
+        <span class="badge-live">● Live</span>
+      </a>
+    </div>
+    <div class="image-item">
+      <a href="{{ url_for('login') }}">
+        <img
+          src="{{ url_for('static', filename='sabrina.jpg') }}"
+          alt="Sample 10"
+        />
+        <span class="badge-live">● Live</span>
+      </a>
+    </div>
+    <div class="image-item">
+      <a href="{{ url_for('login') }}">
+        <img
+          src="{{ url_for('static', filename='viona fiona.jpg') }}"
+          alt="Sample 11"
+        />
+        <span class="badge-live">● Live</span>
+      </a>
+    </div>
+    <div class="image-item">
+      <a href="{{ url_for('login') }}">
+        <img src="{{ url_for('static', filename='20.jpg') }}" alt="Sample 12" />
+        <span class="badge-live">● Live</span>
+      </a>
+    </div>
+  </div>
+
+  {% endblock %}
+</div>
